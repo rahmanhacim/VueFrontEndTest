@@ -1,34 +1,15 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "@/components/HelloWorld.vue";
+import PageLorem from "@/components/LoremPage.vue";
 </script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div class="wrapper">
+    <PageLorem />
+  </div>
 </template>
 
 <style>
 @import "@/assets/base.css";
-@import "@/assets/font/Gotham-Bold.ttf";
 
 #app {
   max-width: 1280px;
@@ -49,15 +30,27 @@ header {
 }
 
 @font-face {
-  font-family: "Gotham-Bold";
-  src: local("~@/assets/font/Gotham-Bold.ttf");
+  font-family: "gotham-bold";
+  src: url("./assets/GothamBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "proxima-nova-regular";
+  src: url("./assets/ProximaNovaRegular.ttf") format("truetype");
+}
+a,
+.title {
+  font-family: "gotham-bold";
+  text-decoration: none;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin-bottom: 10px;
 }
 
-a,
-.green {
+.description {
+  font-family: "proxima-nova-regular";
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 @media (hover: hover) {
@@ -98,8 +91,7 @@ nav a:first-of-type {
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     padding: 0 2rem;
   }
 

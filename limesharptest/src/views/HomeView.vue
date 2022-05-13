@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from "@/components/TheWelcome.vue";
+import PageLorem from "@/components/LoremPage.vue";
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <PageLorem />
   </main>
 </template>
